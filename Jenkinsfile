@@ -1,16 +1,22 @@
-@Library("harilibs") _
 pipeline{
     agent any
-    stages{
-        stage("Maven Build"){
-            steps{
-                sh 'mvn clean package -DskipTests=true'
+        stages{
+            stage("Hello"){
+                steps{
+                    echo"welcome to jenkins pipeline"
+                }
             }
-        }
-        stage(" Dev Tomcat Deploy"){
-            steps{
-                tomcatDeploy("172.31.1.213","ec2-user","tomcat-dev")
+            stage("pipeline"){
+                steps{
+                    echo"writing pipeline script"
+                }
             }
-        }
+            stage("jenkins jobs"){
+                steps{
+                    echo"practice of jenkins concept"
+                }
+            }
+            
+        } 
     }
-}
+
